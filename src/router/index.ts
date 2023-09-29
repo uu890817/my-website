@@ -8,6 +8,7 @@ const router = createRouter({
       name: "home",
       component: () => import("@/views/HomePage.vue"),
     },
+
     // -------------------錯誤處理---------------------------------
     {
       path: "/error",

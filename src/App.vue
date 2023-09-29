@@ -2,8 +2,14 @@
   <n-config-provider :theme="theme">
     <!-- <n-card> 当前操作系统的主题是 {{ osThemeRef }}。 </n-card> -->
 
-    <NavBar />
-    <RouterView />
+    <div class="navBar">
+      <NavBar />
+    </div>
+
+    <div class="wrap">
+      <RouterView />
+    </div>
+
 
 
 
@@ -11,6 +17,7 @@
 </template>
   
 <script setup lang='ts'>
+import "animate.css";
 import NavBar from "@/components/NavBar.vue";
 import { useOsTheme, darkTheme } from "naive-ui";
 import { computed } from "vue";
@@ -21,4 +28,116 @@ const theme = computed(() => {
 });
 </script>
   
-<style></style>
+<style>
+/* Reset CSS */
+body,
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+button,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  color: #adbac7;
+  font-family: arial, "Microsoft JhengHei", "微軟正黑體", sans-serif !important;
+}
+
+body {
+  background-color: #20252d;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.wrap {
+  width: 70%;
+  margin: auto;
+}
+</style>

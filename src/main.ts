@@ -1,8 +1,11 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
-import naive from "naive-ui";
-import router from "./router";
 import App from "./App.vue";
+import router from "./router";
+import naive from "naive-ui";
+
+import VueViewer from "v-viewer";
+import "viewerjs/dist/viewer.css";
 
 const app = createApp(App);
 
@@ -13,4 +16,5 @@ const pinia = createPinia();
 app.use(pinia);
 app.use(router);
 app.use(naive);
+app.use(VueViewer);
 app.mount("#app");

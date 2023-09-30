@@ -9,13 +9,21 @@
         </div>
         <ul>
             <!-- <li><a href="#">Home</a></li> -->
-            <li><a href="#">作品集</a></li>
-            <li><a href="https://github.com/uu890817">Github</a></li>
+            <li><a href="#">精選專案介紹</a></li>
+            <li>
+                <a href="https://github.com/uu890817">
+                    <n-icon style="vertical-align:top;">
+                        <ExitOutline />
+                    </n-icon>我的Github
+                </a>
+            </li>
         </ul>
     </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
+import { NIcon } from "naive-ui";
+import { ExitOutline } from "@vicons/ionicons5";
 </script>
 <style>
 .box {

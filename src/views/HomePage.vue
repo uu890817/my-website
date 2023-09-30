@@ -4,7 +4,10 @@
             <ProfileComponent />
         </div>
         <div class="right animate__animated animate__bounceInRight">
+            <div v-for="(repo, index) in repos" :key="index">
+                <GithubCard :repoData="repo" />
 
+            </div>
             <!-- <img
                 src="https://github-readme-stats.vercel.app/api?username=uu890817&theme=react&show_icons=true&hide_border=false&count_private=true">
             <img src="https://github-readme-streak-stats.herokuapp.com/?user=uu890817&theme=react&hide_border=false"> -->
@@ -15,6 +18,25 @@
     
 <script setup lang='ts'>
 import ProfileComponent from "@/components/homePage/ProfileComponent.vue";
+import GithubCard from "@/components/homePage/GithubCard.vue";
+import { getRepos } from "@/api/requests.ts";
+import { onMounted, ref } from "vue";
+
+const repos = ref([]);
+onMounted(async () => {
+  console.log("onCreate");
+  let result = await getRepos();
+  repos.value = result.sort((a: { created_at: string }, b: { created_at: string }) => {
+    let aData = new Date(a.created_at).getTime();
+    let bData = new Date(b.created_at).getTime();
+    return bData - aData;
+  });
+  // repos.value = result;
+  console.log(repos);
+
+
+});
+
 </script>
     
 <style scoped>

@@ -140,4 +140,8 @@ table {
   width: 70%;
   margin: auto;
 }
+
+.n-icon {
+  vertical-align: middle;
+}
 </style>

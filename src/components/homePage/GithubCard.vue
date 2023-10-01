@@ -89,8 +89,30 @@ const createDropdownOptions = (options: Array<{ name: string; src: string }>) =>
   }));
 
 onMounted(async () => {
-  usedLanguages.value = await getUsedLanguage(props.repoData?.full_name);
-  contributors.value = await getContributors(props.repoData?.full_name);
+
+  const getUsedLanguagesData = localStorage.getItem(`${props.repoData?.full_name}:usedLanguages`);
+  const getUsedLanguagesTime = localStorage.getItem(`${props.repoData?.full_name}:usedLanguagesEfficientTime`);
+  const getContributorsData = localStorage.getItem(`${props.repoData?.full_name}:contributors`);
+  const getContributorsTime = localStorage.getItem(`${props.repoData?.full_name}:contributorsEfficientTime`);
+
+  if (getUsedLanguagesData !== null && getUsedLanguagesTime !== null && (new Date().getTime() - parseInt(getUsedLanguagesTime)) > 1800) {
+    usedLanguages.value = JSON.parse(getUsedLanguagesData);
+  } else {
+    const usedLanguagesResult = await getUsedLanguage(props.repoData?.full_name);
+    localStorage.setItem(`${props.repoData?.full_name}:usedLanguages`, JSON.stringify(usedLanguagesResult));
+    localStorage.setItem(`${props.repoData?.full_name}:usedLanguagesEfficientTime`, new Date().getTime().toString());
+    usedLanguages.value = usedLanguagesResult;
+  }
+
+  if (getContributorsData !== null && getContributorsTime !== null && (new Date().getTime() - parseInt(getContributorsTime)) > 1800) {
+    contributors.value = JSON.parse(getContributorsData);
+  } else {
+    const contributorsResult = await getContributors(props.repoData?.full_name);
+    localStorage.setItem(`${props.repoData?.full_name}:contributors`, JSON.stringify(contributorsResult));
+    localStorage.setItem(`${props.repoData?.full_name}:contributorsEfficientTime`, new Date().getTime().toString());
+    contributors.value = contributorsResult;
+  }
+
 });
 </script>
     

@@ -32,7 +32,7 @@ githubApi.interceptors.response.use(response => {
       console.log(error.message);
     }
   }
-  return Promise.reject(error);
+  return Promise.reject(error.message);
 });
 
 export default githubApi;

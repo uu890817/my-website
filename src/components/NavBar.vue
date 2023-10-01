@@ -9,12 +9,22 @@
         </div>
         <ul>
             <!-- <li><a href="#">Home</a></li> -->
-            <li><a href="#">精選專案介紹</a></li>
+            <li>
+                <a href="#">
+                    <p class="navBarLink">
+                        <n-icon style="vertical-align:top;">
+                            <StarOutline />
+                        </n-icon>精選專案介紹
+                    </p>
+                </a>
+            </li>
             <li>
                 <a href="https://github.com/uu890817">
-                    <n-icon style="vertical-align:top;">
-                        <ExitOutline />
-                    </n-icon>我的Github
+                    <p class="navBarLink">
+                        <n-icon style="vertical-align:top;">
+                            <ExitOutline />
+                        </n-icon>我的Github
+                    </p>
                 </a>
             </li>
         </ul>
@@ -23,7 +33,7 @@
 
 <script setup lang="ts">
 import { NIcon } from "naive-ui";
-import { ExitOutline } from "@vicons/ionicons5";
+import { ExitOutline, StarOutline } from "@vicons/ionicons5";
 </script>
 <style>
 .box {
@@ -50,29 +60,22 @@ import { ExitOutline } from "@vicons/ionicons5";
 
 .logo img {
     height: 55px;
-    /* Adjust height as needed */
     margin-right: 10px;
 }
 
 .site-name {
     padding-left: 50px;
     font-size: 24px;
-    /* Adjust font size as needed */
     font-weight: bold;
-    /* Adjust font weight as needed */
     margin-right: auto;
-    /* Pushes the logo and site name to the left */
     transition: all 0.2s;
 }
 
 .site-name:hover {
     padding-left: 50px;
     font-size: 24px;
-    /* Adjust font size as needed */
     font-weight: bold;
-    /* Adjust font weight as needed */
     margin-right: auto;
-    /* Pushes the logo and site name to the left */
     color: coral;
     transition: all 0.2s;
 }
@@ -88,7 +91,11 @@ import { ExitOutline } from "@vicons/ionicons5";
     margin-left: 20px;
 }
 
-.navbar a {
+a {
+    text-decoration: none;
+}
+
+.navBarLink {
     display: block;
     font-size: large;
     font-weight: bold;
@@ -96,7 +103,7 @@ import { ExitOutline } from "@vicons/ionicons5";
     transition: all 0.2s;
 }
 
-.navbar a:hover {
+.navBarLink:hover {
     font-size: large;
     font-weight: bold;
     text-decoration: none;

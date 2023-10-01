@@ -65,13 +65,25 @@ import GithubCard from "@/components/homePage/GithubCard.vue";
 import { getRepos } from "@/api/requests.ts";
 import { onMounted, ref, computed } from "vue";
 
+// ref--------------------------------------------------------
 const repos = ref([]);
-
 const error403 = ref(true);
 const reflash = ref(true);
 const sortValue = ref("create");
 const nowPage = ref(1);
 const sortOrder = ref("desc");
+const sortOptions = ref([
+  {
+    label: "按建立日期排序",
+    value: "create",
+  },
+  {
+    label: "按最後更新日期排序",
+    value: "update",
+  },
+]);
+
+// computed--------------------------------------------------------
 const pages = computed(() => {
   return Math.round(repos.value.length / 4);
 });
@@ -84,33 +96,15 @@ const sortedRepos = computed(() => {
   if (sortValue.value === "update") {
     sorted = sortUpdate();
   }
-
   for (let i = (4 * (nowPage.value - 1)); i < sorted.length; i++) {
     if (result.length < 4) {
       result.push(sorted[i]);
     }
   }
-
   return result;
 });
 
-
-
-
-const sortOptions = ref([
-  {
-    label: "按建立日期排序",
-    value: "create",
-  },
-  {
-    label: "按最後更新日期排序",
-    value: "update",
-  },
-]);
-
-
-
-
+// function--------------------------------------------------------
 const changeOrder = () => {
   if (sortOrder.value === "asc") {
     sortOrder.value = "desc";
@@ -118,7 +112,6 @@ const changeOrder = () => {
     sortOrder.value = "asc";
   }
 };
-
 const sortCreated = () => {
   return (repos.value).sort((a: { created_at: string }, b: { created_at: string }) => {
     let aData = new Date(a.created_at).getTime();
@@ -129,7 +122,6 @@ const sortCreated = () => {
     return bData - aData;
   });
 };
-
 const sortUpdate = () => {
   return (repos.value).sort((a: { updated_at: string }, b: { updated_at: string }) => {
     let aData = new Date(a.updated_at).getTime();
@@ -141,6 +133,7 @@ const sortUpdate = () => {
   });
 };
 
+// lifecycle--------------------------------------------------------
 onMounted(async () => {
   console.log("onCreate");
 
@@ -177,14 +170,12 @@ onMounted(async () => {
     
 <style scoped>
 .homeWrap {
-  /* 左右布局 */
   position: relative;
   width: 100%;
 
 }
 
 .left {
-  /* 左布局 */
   position: absolute;
   left: 0;
   width: 35%;
@@ -197,7 +188,6 @@ onMounted(async () => {
 }
 
 .right {
-  /* 右布局 */
   position: absolute;
   right: 0;
   width: 60%;

@@ -164,17 +164,20 @@ const props = defineProps({
   repoData: Object,
 });
 
+// ref--------------------------------------------------------
 const toGithubUserPage = ref(false);
 const toGithubRepoPage = ref(false);
 const toWhosePage = ref("");
 const toWhichRepo = ref("");
 const usedLanguages = ref({});
 const contributors = ref([]);
+
+// computed--------------------------------------------------------
 const lastUpdateDate = computed(() => {
   const dateTime = new Date(new Date(props.repoData?.updated_at).getTime() - (8 * 60 * 60 * 1000));
 
   const year = dateTime.getFullYear();
-  const month = (dateTime.getMonth() + 1).toString().padStart(2, "0"); // Month is 0-indexed
+  const month = (dateTime.getMonth() + 1).toString().padStart(2, "0");
   const day = dateTime.getDate().toString().padStart(2, "0");
   const hours = dateTime.getHours().toString().padStart(2, "0");
   const minutes = dateTime.getMinutes().toString().padStart(2, "0");
@@ -212,14 +215,12 @@ const fullName = computed(() => {
 
 });
 
-
+// function--------------------------------------------------------
 const createDropdownOptions = (options: Array<{ name: string; src: string }>) =>
   options.map((option) => ({
     key: option.name,
     label: option.name
   }));
-
-
 const toUserPage = (type: string) => {
   if (type === "cancle") {
     toGithubUserPage.value = false;
@@ -232,10 +233,8 @@ const toUserPage = (type: string) => {
   if (type === "go") {
     window.location.href = `https://github.com/${toWhosePage.value}`;
     toGithubUserPage.value = false;
-
   }
 };
-
 const toRepoPage = (type: string) => {
   if (type === "cancle") {
     toGithubRepoPage.value = false;
@@ -252,8 +251,8 @@ const toRepoPage = (type: string) => {
   }
 };
 
+// lifecycle--------------------------------------------------------
 onMounted(async () => {
-
   const getUsedLanguagesData = localStorage.getItem(`${props.repoData?.full_name}:usedLanguages`);
   const getUsedLanguagesTime = localStorage.getItem(`${props.repoData?.full_name}:usedLanguagesEfficientTime`);
   const getContributorsData = localStorage.getItem(`${props.repoData?.full_name}:contributors`);
@@ -282,7 +281,6 @@ onMounted(async () => {
 <style>
 .userName,
 .repoName {
-    /* 禁止底線 */
     text-decoration: none;
     transition: all 0.2s;
 }
@@ -324,8 +322,6 @@ onMounted(async () => {
 
 .description {
     font-size: 16px;
-    /* 行高 */
-
     line-height: 1.5;
 
 

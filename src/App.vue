@@ -136,10 +136,21 @@ table {
   border-spacing: 0;
 }
 
-.wrap {
-  width: 70%;
-  margin: auto;
+@media (max-width: 1023px) {
+  .wrap {
+    width: 90%;
+    margin: auto;
+  }
 }
+
+@media (min-width: 1023px) {
+  .wrap {
+    width: 70%;
+    margin: auto;
+  }
+}
+
+
 
 .n-icon {
   vertical-align: middle;

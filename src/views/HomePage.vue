@@ -169,35 +169,102 @@ onMounted(async () => {
 </script>
     
 <style scoped>
-.homeWrap {
-  position: relative;
-  width: 100%;
+@media (max-width: 1023px) {
+  .homeWrap {
+    /* position: relative; */
+    width: 100%;
 
+  }
+
+  .left {
+    margin-bottom: 10px;
+    padding: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #3b3b51;
+    border-radius: 5px;
+    background-color: #2b2b36;
+  }
+
+  .right {
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #3b3b51;
+    border-radius: 5px;
+    background-color: #2b2b36;
+
+  }
 }
 
-.left {
-  position: absolute;
-  left: 0;
-  width: 35%;
-  padding: 20px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #3b3b51;
-  border-radius: 5px;
-  background-color: #2b2b36;
+
+@media (min-width: 1023px) {
+
+
+  .homeWrap {
+    position: relative;
+    width: 100%;
+
+  }
+
+  .left {
+    position: absolute;
+    left: 0;
+    width: 30%;
+    padding: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #3b3b51;
+    border-radius: 5px;
+    background-color: #2b2b36;
+  }
+
+  .right {
+    position: absolute;
+    right: 0;
+    width: 60%;
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #3b3b51;
+    border-radius: 5px;
+    background-color: #2b2b36;
+
+  }
 }
 
-.right {
-  position: absolute;
-  right: 0;
-  width: 60%;
-  padding: 10px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #3b3b51;
-  border-radius: 5px;
-  background-color: #2b2b36;
+@media (min-width: 1919px) {
+
+  .homeWrap {
+    position: relative;
+    width: 100%;
+
+  }
+
+  .left {
+    position: absolute;
+    left: 0;
+    width: 35%;
+    padding: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #3b3b51;
+    border-radius: 5px;
+    background-color: #2b2b36;
+  }
+
+  .right {
+    position: absolute;
+    right: 0;
+    width: 60%;
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #3b3b51;
+    border-radius: 5px;
+    background-color: #2b2b36;
 
 
+  }
 }
 </style>

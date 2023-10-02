@@ -24,6 +24,28 @@ import { LogoGithub } from "@vicons/ionicons5";
 </script>
     
 <style scoped>
+@media (max-width: 1023px) {
+    .myPic {
+        width: 200px;
+        border-radius: 100%;
+    }
+}
+
+@media (min-width: 1023px) {
+    .myPic {
+        width: 200px;
+        border-radius: 100%;
+    }
+}
+
+@media (min-width: 1919px) {
+
+    .myPic {
+        width: 300px;
+        border-radius: 100%;
+    }
+}
+
 .n-card {
     max-width: 300px;
 }
@@ -42,10 +64,6 @@ import { LogoGithub } from "@vicons/ionicons5";
     background: rgba(128, 128, 128, 0.4);
 }
 
-.myPic {
-    width: 300px;
-    border-radius: 100%;
-}
 
 .mostUsedLanguage {
     width: 100%;

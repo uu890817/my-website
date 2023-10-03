@@ -74,7 +74,7 @@ const nowPage = ref(1);
 const sortOrder = ref("desc");
 const sortOptions = ref([
   {
-    label: "按建立日期排序",
+    label: "按專案建立日期排序",
     value: "create",
   },
   {
@@ -172,7 +172,9 @@ onMounted(async () => {
 @media (max-width: 1023px) {
   .homeWrap {
     /* position: relative; */
-    width: 100%;
+    width: 90%;
+    height: 100%;
+    margin: auto;
 
   }
 
@@ -203,8 +205,8 @@ onMounted(async () => {
 
   .homeWrap {
     position: relative;
-    width: 100%;
-
+    width: 70%;
+    margin: auto;
   }
 
   .left {
@@ -212,6 +214,7 @@ onMounted(async () => {
     left: 0;
     width: 30%;
     padding: 20px;
+    z-index: 1;
     border-width: 1px;
     border-style: solid;
     border-color: #3b3b51;
@@ -224,6 +227,7 @@ onMounted(async () => {
     right: 0;
     width: 60%;
     padding: 10px;
+    z-index: 1;
     border-width: 1px;
     border-style: solid;
     border-color: #3b3b51;
@@ -237,7 +241,9 @@ onMounted(async () => {
 
   .homeWrap {
     position: relative;
-    width: 100%;
+    width: 70%;
+    height: 100%;
+    margin: auto;
 
   }
 

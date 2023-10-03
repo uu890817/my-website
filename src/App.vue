@@ -6,11 +6,7 @@
       <NavBar />
     </div>
 
-    <div class="wrap">
-      <RouterView />
-    </div>
-
-
+    <RouterView />
 
 
   </n-config-provider>
@@ -90,10 +86,6 @@ td {
   font-family: arial, "Microsoft JhengHei", "微軟正黑體", sans-serif !important;
 }
 
-body {
-  background-color: #20252d;
-}
-
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -111,6 +103,13 @@ section {
 
 body {
   line-height: 1;
+  background-color: #20252d;
+}
+
+html,
+body,
+#app {
+  height: 100vh;
 }
 
 ol,
@@ -139,14 +138,20 @@ table {
 @media (max-width: 1023px) {
   .wrap {
     width: 90%;
+    height: 100%;
     margin: auto;
+    margin-bottom: 10px;
   }
 }
 
 @media (min-width: 1023px) {
   .wrap {
+
     width: 70%;
+    height: 100;
     margin: auto;
+    margin-bottom: 10px;
+
   }
 }
 

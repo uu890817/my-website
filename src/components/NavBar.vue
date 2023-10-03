@@ -5,22 +5,25 @@
             <img src="@/assets/Yu.svg" alt="Logo" />
         </div> -->
         <div class="site-name">
-            <span>Yu's Website</span>
+
+            <span><router-link class="routerSiteName" to="/" style="font-weight: bold;">Yu's Website</router-link></span>
+
+
         </div>
         <ul>
             <!-- <li><a href="#">Home</a></li> -->
             <li>
-                <a href="#">
-                    <p class="navBarLink">
-                        <n-icon style="vertical-align:top;">
+                <p class="navBarLink">
+                    <RouterLink to="/project" style="font-weight: bold;vertical-align:top;">
+                        <n-icon style="vertical-align:sub;">
                             <StarOutline />
-                        </n-icon>精選專案介紹
-                    </p>
-                </a>
+                        </n-icon>精選專案
+                    </RouterLink>
+                </p>
             </li>
             <li>
                 <a href="https://github.com/uu890817">
-                    <p class="navBarLink">
+                    <p class="navBarLink" style="vertical-align:top;">
                         <n-icon style="vertical-align:top;">
                             <ExitOutline />
                         </n-icon>我的Github
@@ -63,8 +66,8 @@ import { ExitOutline, StarOutline } from "@vicons/ionicons5";
     }
 
     .site-name {
-        padding-left: 30px;
-        font-size: 16px;
+        padding-left: 0px;
+        font-size: 20px;
         font-weight: bold;
         margin-right: auto;
         transition: all 0.2s;
@@ -72,7 +75,7 @@ import { ExitOutline, StarOutline } from "@vicons/ionicons5";
 
     .site-name:hover {
         padding-left: 30px;
-        font-size: 16px;
+        font-size: 20px;
         font-weight: bold;
         margin-right: auto;
         color: coral;
@@ -81,34 +84,17 @@ import { ExitOutline, StarOutline } from "@vicons/ionicons5";
 
     .navbar ul {
         list-style: none;
-        padding-right: 50px;
+        padding-right: 40px;
         margin: 0;
         display: flex;
     }
 
     .navbar li {
         margin-left: 20px;
+        font-size: 12px;
+
     }
 
-    a {
-        text-decoration: none;
-    }
-
-    .navBarLink {
-        display: block;
-        font-size: 11px;
-        font-weight: bold;
-        text-decoration: none;
-        transition: all 0.2s;
-    }
-
-    .navBarLink:hover {
-        font-size: 11px;
-        font-weight: bold;
-        text-decoration: none;
-        color: coral;
-        transition: all 0.2s;
-    }
 
 }
 
@@ -168,25 +154,32 @@ import { ExitOutline, StarOutline } from "@vicons/ionicons5";
         margin-left: 20px;
     }
 
-    a {
-        text-decoration: none;
-    }
+}
 
-    .navBarLink {
-        display: block;
-        font-size: large;
-        font-weight: bold;
-        text-decoration: none;
-        transition: all 0.2s;
-    }
 
-    .navBarLink:hover {
-        font-size: large;
-        font-weight: bold;
-        text-decoration: none;
-        color: coral;
-        transition: all 0.2s;
-    }
+
+.navBarLink {
+    font-size: large;
+    font-weight: bold;
+}
+
+a,
+.navBarLink {
+    text-decoration: none;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+a:hover,
+.navBarLink:hover {
+    text-decoration: none;
+    color: rgb(231, 203, 192);
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.router-link-active {
+    color: rgb(143, 213, 228);
 }
 </style>
   

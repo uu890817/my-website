@@ -1,4 +1,4 @@
-<template >
+<template>
     <div>
         <router-view></router-view>
     </div>
@@ -7,7 +7,7 @@
         <n-button @click="home">回首頁吧</n-button>
     </n-space>
 </template>
-<script setup lang='ts'>
+<script setup lang="ts">
 import { useRouter } from "vue-router";
 const router = useRouter();
 
@@ -17,7 +17,6 @@ const back = () => {
 const home = () => {
   router.push({ name: "Home" });
 };
-
 </script>
 <style scoped>
 div {

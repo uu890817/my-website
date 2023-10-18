@@ -54,58 +54,183 @@ const props = defineProps<{
 </script>
     
 <style scoped>
-.desc-wrap-style-1 {
-    width: 100%;
-    background-color: #2d3643;
-    display: flex;
+@media (max-width: 980px) {
+
+
+    .desc-wrap-style-1 {
+        width: 100%;
+        background-color: #2d3643;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5px;
+    }
+
+    .desc-wrap-style-2 {
+        width: 100%;
+        background-color: #343e4e;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5px;
+    }
+
+    #image {
+        flex: 30%;
+        padding: 30px;
+        transition: all 0.2s;
+        float: inline-start;
+    }
+
+    .carousel-img {
+        display: block;
+        width: 100%;
+        max-height: 230px;
+        object-fit: cover;
+        float: left;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .carousel-img:hover {
+        display: block;
+        width: 100%;
+        max-height: 230px;
+
+        transition: all 0.2s;
+    }
+
+    .text {
+        display: block;
+        margin: auto;
+        justify-content: center;
+        flex: 70%;
+        padding: 30px;
+    }
+
+    .title {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #87a8dd;
+    }
+
+    .content {
+        padding: 0;
+        line-height: 1.5;
+        padding-top: auto;
+        white-space: pre-line;
+    }
 }
 
-.desc-wrap-style-2 {
-    width: 100%;
-    background-color: #343e4e;
-    display: flex;
+@media (min-width: 980px) {
+    .desc-wrap-style-1 {
+        width: 100%;
+        background-color: #2d3643;
+        display: flex;
+    }
+
+    .desc-wrap-style-2 {
+        width: 100%;
+        background-color: #343e4e;
+        display: flex;
+    }
+
+    .image {
+        flex: 30%;
+        padding: 30px;
+        transition: all 0.2s;
+    }
+
+    .carousel-img {
+        display: block;
+        width: 300px;
+        height: 220px;
+        object-fit: cover;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .carousel-img:hover {
+        display: block;
+        width: 320px;
+        height: 240px;
+        transition: all 0.2s;
+    }
+
+    .text {
+        display: block;
+        margin: auto;
+        justify-content: center;
+        flex: 70%;
+        padding: 30px;
+    }
+
+    .title {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #87a8dd;
+    }
+
+    .content {
+        padding: 0;
+        line-height: 1.5;
+        padding-top: auto;
+        white-space: pre-line;
+    }
 }
 
-.image {
-    flex: 30%;
-    padding: 30px;
-    transition: all 0.2s;
-}
+@media (min-width: 1919px) {
+    .desc-wrap-style-1 {
+        width: 100%;
+        background-color: #2d3643;
+        display: flex;
+    }
 
-.carousel-img {
-    display: block;
-    width: 300px;
-    height: 220px;
-    object-fit: cover;
-    cursor: pointer;
-    transition: all 0.2s;
-}
+    .desc-wrap-style-2 {
+        width: 100%;
+        background-color: #343e4e;
+        display: flex;
+    }
 
-.carousel-img:hover {
-    display: block;
-    width: 320px;
-    height: 240px;
-    transition: all 0.2s;
-}
+    .image {
+        flex: 30%;
+        padding: 30px;
+        transition: all 0.2s;
+    }
 
-.text {
-    display: block;
-    margin: auto;
-    justify-content: center;
-    flex: 70%;
-    padding: 30px;
-}
+    .carousel-img {
+        display: block;
+        width: 300px;
+        height: 220px;
+        object-fit: cover;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
 
-.title {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #87a8dd;
-}
+    .carousel-img:hover {
+        display: block;
+        width: 320px;
+        height: 240px;
+        transition: all 0.2s;
+    }
 
-.content {
-    padding: 0;
-    line-height: 1.5;
-    padding-top: auto;
-    white-space: pre-line;
+    .text {
+        display: block;
+        margin: auto;
+        justify-content: center;
+        flex: 70%;
+        padding: 30px;
+    }
+
+    .title {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #87a8dd;
+    }
+
+    .content {
+        padding: 0;
+        line-height: 1.5;
+        padding-top: auto;
+        white-space: pre-line;
+    }
 }
 </style>

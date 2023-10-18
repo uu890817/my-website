@@ -155,7 +155,7 @@
 
   </div>
 
-  <n-space class="goto animate__animated animate__backInLeft">
+  <n-space id="goto" class="goto animate__animated animate__backInLeft">
 
     <n-anchor :show-rail="false" :show-background="false" :bound="150">
       <p style="margin-bottom: 10px;">快速導航</p>
@@ -302,41 +302,150 @@ const developers = [
   font-weight: bold;
 }
 
-.article-deviation:target {
-  /* padding-top: 100px; */
-  display: block;
-  position: relative;
-  color: #96916f;
-  /* 也可以使用 position: absolute; */
-  /* padding-top: 110px !important;
-  position: relative;
-  top: -110px; */
-}
+
 
 .n-tab-pane {
   font-family: arial, "Microsoft JhengHei", "微軟正黑體", sans-serif !important;
   color: #adbac7;
 }
 
-.tutorlinkWrap {
-  width: 70%;
-  height: 100%;
-  margin: auto;
-  background-color: #20252d;
-  /* position: fixed; */
-  /* z-index: 9999; */
-  /* top: 0; */
-  /* left: 0; */
-  /* right: 0; */
-  /* bottom: 0; */
-  /* overflow: auto; */
+
+@media (max-width: 980px) {
+  .tutorlinkWrap {
+    width: 95%;
+    height: 100%;
+    margin: auto;
+    background-color: #20252d;
+    /* position: fixed; */
+    /* z-index: 9999; */
+    /* top: 0; */
+    /* left: 0; */
+    /* right: 0; */
+    /* bottom: 0; */
+    /* overflow: auto; */
+  }
+
+  .carousel-img {
+    width: 100%;
+    max-height: 450px;
+    /* height: 500px; */
+    object-fit: fill;
+  }
+
+  #goto {
+    visibility: hidden;
+  }
 }
 
-.carousel-img {
-  width: 100%;
-  max-height: 450px;
-  /* height: 500px; */
-  object-fit: fill;
+
+
+@media (min-width: 980px) {
+  .tutorlinkWrap {
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    background-color: #20252d;
+    /* position: fixed; */
+    /* z-index: 9999; */
+    /* top: 0; */
+    /* left: 0; */
+    /* right: 0; */
+    /* bottom: 0; */
+    /* overflow: auto; */
+  }
+
+  .carousel-img {
+    width: 100%;
+    max-height: 450px;
+    /* height: 500px; */
+    object-fit: fill;
+  }
+
+  .github {
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .github-left {
+    flex: 1;
+    left: 0;
+    margin-right: 5px;
+    width: 48%;
+    background-color: #282835;
+  }
+
+  .github-right {
+    flex: 1;
+    right: 0;
+    margin-left: 5px;
+    width: 48%;
+    background-color: #232e2c;
+  }
+
+  .github-name {
+    font-size: 16px;
+    color: #adbac7;
+  }
+
+}
+
+
+@media (min-width: 1919px) {
+  .tutorlinkWrap {
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    background-color: #20252d;
+    /* position: fixed; */
+    /* z-index: 9999; */
+    /* top: 0; */
+    /* left: 0; */
+    /* right: 0; */
+    /* bottom: 0; */
+    /* overflow: auto; */
+  }
+
+  .article-deviation:target {
+    /* padding-top: 100px; */
+    display: block;
+    position: relative;
+    color: #96916f;
+    /* 也可以使用 position: absolute; */
+    /* padding-top: 110px !important;
+  position: relative;
+  top: -110px; */
+  }
+
+  .github {
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .github-left {
+    flex: 1;
+    left: 0;
+    margin-right: 5px;
+    width: 48%;
+    background-color: #282835;
+  }
+
+  .github-right {
+    flex: 1;
+    right: 0;
+    margin-left: 5px;
+    width: 48%;
+    background-color: #232e2c;
+  }
+
+  .github-name {
+    font-size: 16px;
+    color: #adbac7;
+  }
+
+  .point {
+    display: block;
+    height: 60px
+  }
 }
 
 .n-carousel__dots {
@@ -357,31 +466,7 @@ const developers = [
   left: 5%;
 }
 
-.github {
-  display: flex;
-  margin-top: 10px;
-}
 
-.github-left {
-  flex: 1;
-  left: 0;
-  margin-right: 5px;
-  width: 48%;
-  background-color: #282835;
-}
-
-.github-right {
-  flex: 1;
-  right: 0;
-  margin-left: 5px;
-  width: 48%;
-  background-color: #232e2c;
-}
-
-.github-name {
-  font-size: 16px;
-  color: #adbac7;
-}
 
 .point {
   display: block;

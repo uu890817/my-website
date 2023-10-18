@@ -5,7 +5,7 @@
             <img class="carousel-img" :src="props.data.img[0]" alt="圖片載入中...">
         </div>
         <n-carousel class="image" v-viewer autoplay draggable :space-between="100" :interval="5000" dot-type="line"
-            dot-placement="left" v-else>
+            dot-placement="left" :mousewheel="true" v-else>
             <img class="carousel-img" v-for="(img, index) in props.data.img" :key="index" :src="img" alt="圖片載入中..." />
         </n-carousel>
 
@@ -32,7 +32,7 @@
             <img class="carousel-img" :src="props.data.img[0]" style="float: right;" alt="圖片載入中...">
         </div>
         <n-carousel class="image" v-viewer autoplay draggable :interval="5000" :space-between="100" dot-type="line"
-            dot-placement="right" v-else>
+            dot-placement="right" :mousewheel="true" v-else>
             <img class="carousel-img" style="float: right;" v-for="(img, index) in props.data.img" :key="index" :src="img"
                 alt="圖片載入中..." />
         </n-carousel>
@@ -76,6 +76,7 @@ const props = defineProps<{
     display: block;
     width: 300px;
     height: 220px;
+    object-fit: cover;
     cursor: pointer;
     transition: all 0.2s;
 }

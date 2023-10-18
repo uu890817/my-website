@@ -9,7 +9,7 @@
     <!-- ---------------------------------------------------------------------------------------------------------------------- -->
     <div id="info-point" class="point" />
     <n-space id="infomation" class="article-deviation" style="margin-top:20px; border-width: 0;" vertical>
-      <n-space style="font-size: 21px;">
+      <n-space style="font-size: 24px;">
         <n-icon style="vertical-align: sub;">
           <Sparkles />
         </n-icon>專案簡介
@@ -23,7 +23,7 @@
     <!-- ---------------------------------------------------------------------------------------------------------------------- -->
     <div id="technology-point" class="point" />
     <n-space id="mainTechnology" class="article-deviation" style="margin-top:20px; border-width: 0;" vertical>
-      <n-space style="font-size: 20px;">
+      <n-space style="font-size: 24px;">
         <n-icon style="vertical-align: sub;">
           <BuildOutline />
         </n-icon>主要開發技術
@@ -49,7 +49,7 @@
 
     <!-- ---------------------------------------------------------------------------------------------------------------------- -->
     <div id="mainSystem-point" class="point" />
-    <n-space id="mainSystem" class="article-deviation" style="margin-top:30px; font-size: 20px; font-weight: bold;">
+    <n-space id="mainSystem" class="article-deviation" style="margin-top:30px; font-size: 24px; font-weight: bold;">
       <n-icon style="vertical-align: sub; ">
         <CodeSlash />
       </n-icon>主要系統介紹
@@ -91,7 +91,7 @@
 
     <!-- ---------------------------------------------------------------------------------------------------------------------- -->
     <div id="developers-point" class="point" />
-    <n-space id="developers" class="article-deviation" style="margin-top:30px; font-size: 20px; font-weight: bold;">
+    <n-space id="developers" class="article-deviation" style="margin-top:30px; font-size: 24px; font-weight: bold;">
       <n-icon style="vertical-align: sub; ">
         <PeopleSharp />
       </n-icon>參與開發者
@@ -115,7 +115,7 @@
 
     <!-- ---------------------------------------------------------------------------------------------------------------------- -->
     <div id="github-point" class="point" />
-    <n-space id="github" class="article-deviation" style="margin-top:30px; font-size: 20px; font-weight: bold;">
+    <n-space id="github" class="article-deviation" style="margin-top:30px; font-size: 24px; font-weight: bold;">
       <n-icon style="vertical-align: sub; ">
         <LogoGithub />
       </n-icon>專案原始碼

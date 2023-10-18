@@ -7,7 +7,7 @@
             <n-space vertical justify="center" style="padding-top: 10px;">
                 <img class="image" :src="data.img" style="width: 100px; height: 100px;">
 
-                <a class="link" href="" target="_blank">{{ data.name }}</a>
+                <a class="link" :href="`https://github.com/${data.name}`" target="_blank">{{ data.name }}</a>
             </n-space>
         </div>
     </div>

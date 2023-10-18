@@ -65,21 +65,25 @@
       <n-tab-pane name="lessons" tab="　　課程系統　　">
         <div style="padding: 0 20px 0 20px">
           <DeveloperCard :datas="lessonDeveloper" />
+          <LessonPage />
         </div>
       </n-tab-pane>
       <n-tab-pane name="exercise" tab="　　學習系統　　">
         <div style="padding: 0 20px 0 20px">
           <DeveloperCard :datas="exerciseDeveloper" />
+          <ExercisePage />
         </div>
       </n-tab-pane>
       <n-tab-pane name="shop" tab="　　商城系統　　">
         <div style="padding: 0 20px 0 20px">
           <DeveloperCard :datas="shopDeveloper" />
+          <ShopPage />
         </div>
       </n-tab-pane>
       <n-tab-pane name="other" tab="　　課程輔助系統　　">
         <div style="padding: 0 20px 0 20px">
           <DeveloperCard :datas="othereDeveloper" />
+          <OtherPage />
         </div>
       </n-tab-pane>
 
@@ -169,7 +173,15 @@
 <script setup lang="ts">
 import { BuildOutline, CodeSlash, PeopleSharp, LogoGithub, Sparkles } from "@vicons/ionicons5";
 import AccountPage from "@/components/projectDescription/tutorlink/AccountPage.vue";
+import LessonPage from "@/components/projectDescription/tutorlink/LessonPage.vue";
+import ExercisePage from "@/components/projectDescription/tutorlink/ExercisePage.vue";
+import ShopPage from "@/components/projectDescription/tutorlink/ShopPage.vue";
+import OtherPage from "@/components/projectDescription/tutorlink/OtherPage.vue";
+
+
+
 import DeveloperCard from "@/components/projectDescription/tutorlink/DeveloperCard.vue";
+
 
 const carouselImg = [
   {

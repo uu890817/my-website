@@ -10,6 +10,7 @@
 
 
   </n-config-provider>
+  <n-back-top :right="20" />
 </template>
   
 <script setup lang='ts'>
@@ -159,5 +160,13 @@ table {
 
 .n-icon {
   vertical-align: middle;
+}
+
+.n-back-top {
+  background: #4a5970;
+}
+
+.n-back-top>.n-base-icon {
+  color: #b5caec;
 }
 </style>

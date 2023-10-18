@@ -58,20 +58,29 @@
     <n-tabs default-value="account" justify-content="space-evenly" type="line" animated style="margin-top:20px;">
       <n-tab-pane name="account" tab="　　會員系統　　">
         <div style="padding: 0 20px 0 20px">
+          <DeveloperCard :datas="accountDeveloper" />
           <AccountPage />
         </div>
       </n-tab-pane>
       <n-tab-pane name="lessons" tab="　　課程系統　　">
-        <div style="padding: 0 20px 0 20px">課程系統撰寫中</div>
+        <div style="padding: 0 20px 0 20px">
+          <DeveloperCard :datas="lessonDeveloper" />
+        </div>
       </n-tab-pane>
       <n-tab-pane name="exercise" tab="　　學習系統　　">
-        <div style="padding: 0 20px 0 20px">學習系統撰寫中</div>
+        <div style="padding: 0 20px 0 20px">
+          <DeveloperCard :datas="exerciseDeveloper" />
+        </div>
       </n-tab-pane>
       <n-tab-pane name="shop" tab="　　商城系統　　">
-        <div style="padding: 0 20px 0 20px">商城系統撰寫中</div>
+        <div style="padding: 0 20px 0 20px">
+          <DeveloperCard :datas="shopDeveloper" />
+        </div>
       </n-tab-pane>
       <n-tab-pane name="other" tab="　　課程輔助系統　　">
-        <div style="padding: 0 20px 0 20px">課程輔助系統撰寫中</div>
+        <div style="padding: 0 20px 0 20px">
+          <DeveloperCard :datas="othereDeveloper" />
+        </div>
       </n-tab-pane>
 
     </n-tabs>
@@ -160,7 +169,7 @@
 <script setup lang="ts">
 import { BuildOutline, CodeSlash, PeopleSharp, LogoGithub, Sparkles } from "@vicons/ionicons5";
 import AccountPage from "@/components/projectDescription/tutorlink/AccountPage.vue";
-
+import DeveloperCard from "@/components/projectDescription/tutorlink/DeveloperCard.vue";
 
 const carouselImg = [
   {
@@ -209,6 +218,41 @@ const useTechnology = [
     link: "https://www.naiveui.com/zh-CN/os-theme",
   },
 
+];
+
+const accountDeveloper = [
+  {
+    name: "GongChi1126",
+    img: "https://avatars.githubusercontent.com/u/135186489",
+  }
+];
+const lessonDeveloper = [
+  {
+    name: "Rayliao0129",
+    img: "https://avatars.githubusercontent.com/u/135186502",
+  },
+  {
+    name: "suycci",
+    img: "https://avatars.githubusercontent.com/u/135186349",
+  }
+];
+const exerciseDeveloper = [
+  {
+    name: "uu890817",
+    img: "https://avatars.githubusercontent.com/u/46030302",
+  }
+];
+const shopDeveloper = [
+  {
+    name: "jenny3417",
+    img: "https://avatars.githubusercontent.com/u/80151221",
+  }
+];
+const othereDeveloper = [
+  {
+    name: "WeiC0907",
+    img: "https://avatars.githubusercontent.com/u/120552238",
+  }
 ];
 
 const developers = [

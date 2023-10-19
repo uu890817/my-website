@@ -9,8 +9,9 @@
     <RouterView />
 
 
+
+    <n-back-top :right="20" />
   </n-config-provider>
-  <n-back-top :right="20" />
 </template>
   
 <script setup lang='ts'>
@@ -21,7 +22,8 @@ import { computed } from "vue";
 
 const osThemeRef = useOsTheme();
 const theme = computed(() => {
-  return osThemeRef.value === "dark" ? darkTheme : null;
+  // return osThemeRef.value === "dark" ? darkTheme : null;
+  return osThemeRef.value === "dark" ? darkTheme : darkTheme;
 });
 </script>
   

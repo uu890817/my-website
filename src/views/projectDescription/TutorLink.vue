@@ -37,12 +37,6 @@
             <a :href="data.link" target="_blank">{{ data.name }}</a>
           </n-space>
         </div>
-        <n-card>
-          <template #cover>
-
-          </template>
-
-        </n-card>
       </n-space>
 
     </n-space>
@@ -105,12 +99,6 @@
           <a :href="`https://github.com/${data.name}`" target="_blank">{{ data.name }}</a>
         </n-space>
       </div>
-      <n-card>
-        <template #cover>
-
-        </template>
-
-      </n-card>
     </n-space>
 
     <!-- ---------------------------------------------------------------------------------------------------------------------- -->

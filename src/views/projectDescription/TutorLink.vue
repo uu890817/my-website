@@ -111,7 +111,7 @@
 
     <div class="github">
 
-      <n-card class="github-left" hoverable>
+      <n-card class="github-left" style="background;background: #282835;" hoverable>
         <span class="github-name"><a href="https://github.com/uu890817/">uu890817</a> / <a
             href="https://github.com/uu890817/TutorLink-SpringBoot">TutorLink-SpringBoot</a> (後端)</span>
         <n-space justify="end">
@@ -121,7 +121,8 @@
           </n-tag>
         </n-space>
 
-      </n-card><n-card class="github-right" hoverable>
+      </n-card>
+      <n-card class="github-right" style="background;background: #232e2c;" hoverable>
         <span class="github-name"><a href="https://github.com/jenny3417/">jenny3417</a> / <a
             href="https://github.com/jenny3417/tutorlink-vue">tutorlink-vue</a> (前端)</span>
         <n-space justify="end">
@@ -320,6 +321,25 @@ const developers = [
     object-fit: fill;
   }
 
+
+  .github {}
+
+  .github-left {
+    margin-top: 10px;
+    background-color: #282835;
+  }
+
+  .github-right {
+    margin-top: 10px;
+    background: #232e2c;
+  }
+
+  .github-name {
+    font-size: 16px;
+    color: #adbac7;
+  }
+
+
   #goto {
     visibility: hidden;
   }
@@ -446,6 +466,7 @@ const developers = [
   background: #20252d;
 }
 
+
 .goto {
   /* background-color: rgba(64, 119, 103, 0.205);
   padding: 10px; */
@@ -453,8 +474,6 @@ const developers = [
   top: 10%;
   left: 5%;
 }
-
-
 
 .point {
   display: block;

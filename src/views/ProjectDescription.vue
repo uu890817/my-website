@@ -41,13 +41,13 @@ const projects = [
     img: "https://picsum.photos/500/500",
     link: ""
   },
-  {
-    id: 4,
-    name: "Yu Viewer",
-    description: "一個圖片瀏覽器",
-    img: "https://picsum.photos/500/500",
-    link: ""
-  },
+  // {
+  //   id: 4,
+  //   name: "Yu Viewer",
+  //   description: "一個圖片瀏覽器",
+  //   img: "https://picsum.photos/500/500",
+  //   link: ""
+  // },
 ];
 </script>
 

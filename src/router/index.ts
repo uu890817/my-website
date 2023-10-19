@@ -35,6 +35,14 @@ const router = createRouter({
       },
       component: () => import("@/views/projectDescription/TutorLink.vue")
     },
+    {
+      path: "/project/yuwebsite",
+      name: "yuwebsite",
+      meta:{
+        title:"Yu's Website介紹",
+      },
+      component: () => import("@/views/projectDescription/YuWebsite.vue")
+    },
 
     // -------------------錯誤處理---------------------------------
     {

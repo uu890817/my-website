@@ -29,18 +29,18 @@ const projects = [
   },
   {
     id: 2,
-    name: "Discord Bot - Minecraft伺服器管理助手",
-    description: "這是一個使用Java相關技術所開發的Discord機器人，主要用途為協助管理Minecraft伺服器，在Discord頻道內具有查看CPU記憶體等硬體使用量、目前遊戲內線上人數與伺服器版本等功能",
-    img: "https://picsum.photos/500/500",
-    link: ""
-  },
-  {
-    id: 3,
     name: "Yu's Website",
     description: "Yu's Website 也就是本網頁，基於Vue3+TypeScript開發，",
-    img: "https://picsum.photos/500/500",
-    link: ""
+    img: "https://i.imgur.com/ZTRo0pG.jpg",
+    link: "yuwebsite"
   },
+  // {
+  //   id: 3,
+  //   name: "Discord Bot - Minecraft伺服器管理助手",
+  //   description: "這是一個使用Java相關技術所開發的Discord機器人，主要用途為協助管理Minecraft伺服器，在Discord頻道內具有查看CPU記憶體等硬體使用量、目前遊戲內線上人數與伺服器版本等功能",
+  //   img: "https://picsum.photos/500/500",
+  //   link: ""
+  // },
   // {
   //   id: 4,
   //   name: "Yu Viewer",

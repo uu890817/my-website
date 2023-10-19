@@ -15,7 +15,7 @@
                     {{ props.data.description }}
                     <n-space class="moreInfoBtn" justify="end" align="end">
 
-                        <router-link :to="`/project/${props.data.link}`">
+                        <router-link :to="`/project/${props.data.link}`" v-if="props.data.link !== ''">
                             <n-button strong secondary type="primary">
                                 點我查看詳細介紹
                             </n-button></router-link>

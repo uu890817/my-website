@@ -197,7 +197,7 @@ const carouselImg = [
 const useTechnology = [
   {
     name: "OpenJDK",
-    icon: "http://cr.openjdk.java.net/~jeff/Duke/png/Thumbsup2.png",
+    icon: "https://cr.openjdk.java.net/~jeff/Duke/png/Thumbsup2.png",
     link: "https://openjdk.org/",
   },
   {
@@ -323,7 +323,7 @@ const developers = [
 
   .carousel-img {
     width: 100%;
-    max-height: 450px;
+    max-height: 300px;
     /* height: 500px; */
     object-fit: fill;
 
@@ -372,7 +372,7 @@ const developers = [
 
   .carousel-img {
     width: 100%;
-    max-height: 500px;
+    max-height: 400px;
     /* height: 500px; */
     object-fit: cover;
   }
@@ -419,6 +419,13 @@ const developers = [
     /* right: 0; */
     /* bottom: 0; */
     /* overflow: auto; */
+  }
+
+  .carousel-img {
+    width: 100%;
+    max-height: 500px;
+    /* height: 500px; */
+    object-fit: cover;
   }
 
   .article-deviation:target {

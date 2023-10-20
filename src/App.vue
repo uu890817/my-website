@@ -89,6 +89,14 @@ td {
   font-family: arial, "Microsoft JhengHei", "微軟正黑體", sans-serif !important;
 }
 
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+
+}
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,

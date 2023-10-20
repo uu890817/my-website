@@ -24,14 +24,14 @@ const projects = [
     id: 1,
     name: "TutorLink 家教平台",
     description: "這個專案基於 Spring Boot 框架開發，旨在透過科技的力量實現家教和學生之間的連接，為他們提供更好的學習環境和更廣泛的學習機會。這個家教網平台將匯集優秀的家教師資源和學習資源，並通過智能配對系統將合適的家教師與學生相互連接。這將為學生們提供個性化的學習計劃和指導，幫助他們在學業上取得更好的成績和發展。",
-    img: "https://cdn.discordapp.com/attachments/1158784930596266055/1158786626202370159/TutorLink-Home.webp",
+    img: "https://i.imgur.com/ciZT8HI.jpg",
     link: "tutorlink"
   },
   {
     id: 2,
     name: "Yu's Website",
     description: "Yu's Website 也就是本網頁，基於Vue3+TypeScript開發，",
-    img: "https://i.imgur.com/ZTRo0pG.jpg",
+    img: "https://i.imgur.com/yWzc8fY.jpg",
     link: "yuwebsite"
   },
   // {

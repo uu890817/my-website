@@ -6,6 +6,11 @@
                 v-viewer />
         </n-carousel>
 
+
+
+        <n-alert title="頁面製作中" type="warning" style="margin-top: 10px;">
+            本頁面還在制作中，部分資訊可能不完全，造成不便請見諒。
+        </n-alert>
         <!-- ---------------------------------------------------------------------------------------------------------------------- -->
         <div id="info-point" class="point" />
         <n-space id="infomation" class="article-deviation" style="margin-top:20px; border-width: 0;" vertical>

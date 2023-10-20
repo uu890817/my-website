@@ -1,7 +1,7 @@
 <!-- eslint-disable no-irregular-whitespace -->
 <template>
   <div class="tutorlinkWrap animate__animated animate__zoomIn">
-    <n-carousel autoplay draggable>
+    <n-carousel autoplay draggable :space-between="20">
       <img class="carousel-img" v-for="(img, index) in carouselImg" :key="index" :src="img.img" :interval="3000"
         v-viewer />
     </n-carousel>
@@ -175,7 +175,7 @@ import DeveloperCard from "@/components/projectDescription/tutorlink/DeveloperCa
 const carouselImg = [
   {
     img:
-      "https://cdn.discordapp.com/attachments/1158784930596266055/1158786626202370159/TutorLink-Home.webp",
+      "https://i.imgur.com/ciZT8HI.jpg",
   },
   {
     img:
@@ -184,6 +184,13 @@ const carouselImg = [
   {
     img:
       "https://cdn.discordapp.com/attachments/1158784930596266055/1158793632522969149/TutorLink-MyExercise.webp",
+  },
+  {
+    img:
+      "  https://i.imgur.com/mcdDWSP.jpg",
+  },
+  {
+    img: "https://i.imgur.com/42yXMgP.jpg",
   },
 ];
 
@@ -319,6 +326,7 @@ const developers = [
     max-height: 450px;
     /* height: 500px; */
     object-fit: fill;
+
   }
 
 
@@ -364,9 +372,9 @@ const developers = [
 
   .carousel-img {
     width: 100%;
-    max-height: 450px;
+    max-height: 500px;
     /* height: 500px; */
-    object-fit: fill;
+    object-fit: cover;
   }
 
   .github {

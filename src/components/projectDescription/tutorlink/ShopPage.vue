@@ -3,35 +3,35 @@
 </template>
       
 <script setup lang='ts'>
-import DescCard from "@/components/projectDescription/tutorlink/DescCard.vue";
+import DescCard from "@/components/projectDescription/DescCard.vue";
 
 const descData = [
   {
     img: [
-      "https://i.imgur.com/JvnRzNs.jpg",
+      "https://i.imgur.com/JvnRzNs.webp",
     ],
     title: "喜歡 就加入購物車吧!",
     text: "當看到喜歡的課程時，除了可以按下收藏之外，也可以直接加入到購物車之中，",
   },
   {
     img: [
-      "https://i.imgur.com/Sp1ZvjK.jpg",
+      "https://i.imgur.com/Sp1ZvjK.webp",
     ],
     title: "詳細的購買介面",
     text: "購物車內容會顯示您加入的所有課程，並且可以在這裡直接選擇要購買的課堂數量與時間，也可以輕鬆地刪除不想要的課程",
   },
   {
     img: [
-      "https://i.imgur.com/ZKYQWpI.jpg",
-      "https://i.imgur.com/zOkCZt6.jpg",
+      "https://i.imgur.com/ZKYQWpI.webp",
+      "https://i.imgur.com/zOkCZt6.webp",
     ],
     title: "支援第三方支付",
     text: "我們提供了綠界這個第三方的支付平台來讓使用者們可以輕鬆使用信用卡、超商繳費等方式來購買喜歡的課程",
   },
   {
     img: [
-      "https://i.imgur.com/ISAp0Yz.jpg",
-      "https://i.imgur.com/Mn63tsu.jpg",
+      "https://i.imgur.com/ISAp0Yz.webp",
+      "https://i.imgur.com/Mn63tsu.webp",
     ],
     title: "查看您的訂單",
     text: "購買完成後，可以進入訂單詳情中，來查看歷史的交易紀錄或是退款紀錄",

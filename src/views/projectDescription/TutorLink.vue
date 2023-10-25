@@ -329,9 +329,6 @@ const developers = [
 
   }
 
-
-  .github {}
-
   .github-left {
     margin-top: 10px;
     background-color: #282835;

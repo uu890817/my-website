@@ -12,13 +12,6 @@
 import DescriptionCard from "@/components/projectDescription/DescriptionCard.vue";
 
 
-
-
-
-
-
-
-
 const projects = [
   {
     id: 1,
@@ -30,7 +23,7 @@ const projects = [
   {
     id: 2,
     name: "Yu's Website",
-    description: "Yu's Website 也就是本網頁，基於Vue3+TypeScript開發，",
+    description: "Yu's Website 也就是本網頁，使用Vue3.js搭配TypeScript開發，並且使用yarn來管理套件，首頁使用AJAX技術來取得Github提供的資料，並且轉換成容易閱讀的樣式來呈現。",
     img: "https://i.imgur.com/yWzc8fY.jpg",
     link: "yuwebsite"
   },

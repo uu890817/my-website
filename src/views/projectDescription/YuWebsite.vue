@@ -1,7 +1,7 @@
 <!-- eslint-disable no-irregular-whitespace -->
 <template>
   <div class="tutorlinkWrap animate__animated animate__zoomIn">
-    <n-carousel autoplay draggable>
+    <n-carousel autoplay draggable :space-between="20" style="border: 1px solid #595959; border-radius: 3px;">
       <img class="carousel-img" v-for="(img, index) in carouselImg" :key="index" :src="img.img" :interval="3000"
         v-viewer />
     </n-carousel>
@@ -22,7 +22,8 @@
     </n-space>
 
     <p style="margin:10px 20px; line-height: 1.5;">
-
+      Yu's Website
+      也就是本網頁，使用Vue3.js搭配TypeScript開發，並且使用yarn來管理套件，首頁使用AJAX技術來取得Github提供的資料，並且轉換成容易閱讀的樣式來呈現，本網站也挑選了一些專案來進行更詳細的介紹，可以點選導航列上面的精選專案來查看。
     </p>
     <!-- ---------------------------------------------------------------------------------------------------------------------- -->
     <div id="technology-point" class="point" />
@@ -127,15 +128,19 @@ import MainDesc from "@/components/projectDescription/yuwebsite/MainDescription.
 const carouselImg = [
   {
     img:
-      "https://cdn.discordapp.com/attachments/1158784930596266055/1158786626202370159/TutorLink-Home.webp",
+      "https://i.imgur.com/GBI65mm.webp",
   },
   {
     img:
-      "https://cdn.discordapp.com/attachments/1158784930596266055/1158793632896270407/TutorLink-Login.webp",
+      "https://i.imgur.com/h8Z0fqh.webp",
   },
   {
     img:
-      "https://cdn.discordapp.com/attachments/1158784930596266055/1158793632522969149/TutorLink-MyExercise.webp",
+      "https://i.imgur.com/O5E8D51.webp",
+  },
+  {
+    img:
+      "https://i.imgur.com/bIEwDRD.webp",
   },
 ];
 
@@ -220,10 +225,11 @@ const developers = [
     max-height: 450px;
     /* height: 500px; */
     object-fit: fill;
+
+
   }
 
 
-  .github {}
 
   .github-left {
     margin-top: 10px;
@@ -266,8 +272,8 @@ const developers = [
   .carousel-img {
     width: 100%;
     max-height: 450px;
-    /* height: 500px; */
-    object-fit: fill;
+
+    object-fit: cover;
   }
 
   .github {

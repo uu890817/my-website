@@ -1,158 +1,117 @@
 <template>
-    <div class="githubRepoWrap">
-        <n-space justify="space-between" align="center">
-            <p class="repoNameWrap">
-                <n-icon size="30" style="vertical-align: middle;">
-                    <GitNetworkSharp />
-                </n-icon>
+  <div class="githubRepoWrap">
+    <n-space justify="space-between" align="center">
+      <p class="repoNameWrap">
+        <n-icon size="30" style="vertical-align: middle;">
+          <GitNetworkSharp />
+        </n-icon>
 
-                <span class="userName" @click="toWhosePage = fullName.userName; toGithubUserPage = true">{{
-                    fullName.userName }}</span> /
-                <span class="repoName"
-                    @click="toWhosePage = fullName.userName; toWhichRepo = fullName.repoName; toGithubRepoPage = true">{{
-                        fullName.repoName }}</span>
-            </p>
+        <span class="userName" @click="toWhosePage = fullName.userName; toGithubUserPage = true">{{
+          fullName.userName }}</span> /
+        <span class="repoName"
+          @click="toWhosePage = fullName.userName; toWhichRepo = fullName.repoName; toGithubRepoPage = true">{{
+            fullName.repoName }}</span>
+      </p>
 
-            <p>最後更新 : {{ lastUpdateDate }}(UTC+8)</p>
-            <!-- {{ props.repoData?.created_at }}
+      <p>最後更新 : {{ lastUpdateDate }}(UTC+8)</p>
+      <!-- {{ props.repoData?.created_at }}
             {{ props.repoData?.updated_at }} -->
-        </n-space>
-        <hr>
-        <div v-if="props.repoData?.description !== null">
-            專案簡介:
-            <div class=" description">{{ props.repoData?.description }}</div>
-        </div>
-        <div v-else>
-            專案簡介:
-            <div class=" description">本專案目前沒有簡介༼ つ ◕_◕ ༽つ</div>
-        </div>
-        <hr>
-        <n-space justify="space-between" align="end">
-            <n-space>
-                <n-avatar-group :options="contributorsOptions" :size="40" :max="10">
-                    <template #avatar="{ option: { name, src } }">
-                        <n-tooltip>
-                            <template #trigger>
-                                <n-avatar :src="src" @click="toWhosePage = name; toGithubUserPage = true" />
-                            </template>
-                            {{ name }}
-                        </n-tooltip>
-                    </template>
-                    <template #rest="{ options: restOptions, rest }">
-                        <n-dropdown :options="createDropdownOptions(restOptions)" placement="top">
-                            <n-avatar>+{{ rest }}</n-avatar>
-                        </n-dropdown>
-                    </template>
-                </n-avatar-group>
-            </n-space>
-
-            <n-space justify="end">
-                <div v-for="(value, key) in usedLanguages" :key="value">
-
-                    <n-tag v-if="key === 'Java'" :bordered="false"
-                        :color="{ color: '#493541', textColor: '#d48cb9', borderColor: '#1e496f' }" round
-                        style="vertical-align: bottom;">
-                        {{ key }}
-                    </n-tag>
-                    <n-tag v-else-if="key === 'Vue'" :bordered="false" type="success" round style="vertical-align: bottom;">
-                        {{ key }}
-                    </n-tag>
-                    <n-tag v-else-if="key === 'TypeScript'" :bordered="false" type="info" round
-                        style="vertical-align: bottom;">
-                        {{ key }}
-                    </n-tag>
-                    <n-tag v-else-if="key === 'JavaScript'" :bordered="false"
-                        :color="{ color: '#5b4a32', textColor: '#d4c78c', borderColor: '#1e496f' }" round
-                        style="vertical-align: bottom;">
-                        {{ key }}
-                    </n-tag>
-                    <n-tag v-else-if="key === 'HTML'" :bordered="false"
-                        :color="{ color: '#5b3232', textColor: '#ec5d5d', borderColor: '#1e496f' }" round
-                        style="vertical-align: bottom;">
-                        {{ key }}
-                    </n-tag>
-                    <n-tag v-else-if="key === 'CSS'" :bordered="false"
-                        :color="{ color: '#313755', textColor: '#607dff', borderColor: '#1e496f' }" round
-                        style="vertical-align: bottom;">
-                        {{ key }}
-                    </n-tag>
-                    <n-tag v-else-if="key === 'Python'" :bordered="false"
-                        :color="{ color: '#3973a4', textColor: '#d4c78c', borderColor: '#1e496f' }" round
-                        style="vertical-align: bottom;">
-                        {{ key }}
-                    </n-tag>
-                    <n-tag v-else-if="key === 'PHP'" :bordered="false"
-                        :color="{ color: '#7377ad', textColor: '#272739', borderColor: '#1e496f' }" round
-                        style="vertical-align: bottom;">
-                        {{ key }}
-                    </n-tag>
-                    <n-tag v-else-if="key === 'C#'" :bordered="false"
-                        :color="{ color: '#6d287e', textColor: '#d04cf0', borderColor: '#1e496f' }" round
-                        style="vertical-align: bottom;">
-                        {{ key }}
-                    </n-tag>
-                    <n-tag v-else :bordered="false" round style="vertical-align: bottom;">
-                        {{ key }}
-                    </n-tag>
-                </div>
-            </n-space>
-
-        </n-space>
-
-
+    </n-space>
+    <hr>
+    <div v-if="props.repoData?.description !== null">
+      專案簡介:
+      <div class=" description">{{ props.repoData?.description }}</div>
     </div>
-    <!-- {{ props.repoData }} -->
+    <div v-else>
+      專案簡介:
+      <div class=" description">本專案目前沒有簡介༼ つ ◕_◕ ༽つ</div>
+    </div>
+    <hr>
+    <n-space justify="space-between" align="end">
+      <n-space>
+        <n-avatar-group :options="contributorsOptions" :size="40" :max="10">
+          <template #avatar="{ option: { name, src } }">
+            <n-tooltip>
+              <template #trigger>
+                <n-avatar :src="src" @click="toWhosePage = name; toGithubUserPage = true" />
+              </template>
+              {{ name }}
+            </n-tooltip>
+          </template>
+          <template #rest="{ options: restOptions, rest }">
+            <n-dropdown :options="createDropdownOptions(restOptions)" placement="top">
+              <n-avatar>+{{ rest }}</n-avatar>
+            </n-dropdown>
+          </template>
+        </n-avatar-group>
+      </n-space>
+
+      <n-space justify="end">
+        <div v-for="(value, key) in usedLanguages" :key="value">
+
+          <n-tag :bordered="false" :color="languageColorMap.get(key)" round style="vertical-align: bottom;">
+            {{ key }}
+          </n-tag>
+
+        </div>
+      </n-space>
+
+    </n-space>
 
 
-    <n-modal v-model:show="toGithubUserPage">
-        <n-card style="width: 600px" :bordered="false" size="huge" role="dialog" aria-modal="true">
+  </div>
+  <!-- {{ props.repoData }} -->
 
-            <span style="font-size: 20px; ">
-                <n-icon size="23" style="vertical-align: sub;">
-                    <LogOutOutline />
-                </n-icon>
-                {{ `即將前往 ${toWhosePage} 的Github頁面` }}
-            </span>
-            <template #footer>
-                <n-space justify="end">
-                    <n-button type="error" @click="toUserPage('cancle')">
-                        取消前往
-                    </n-button>
-                    <n-button type="warning" @click="toUserPage('newPage')">
-                        開新分頁
-                    </n-button>
-                    <n-button type="success" @click="toUserPage('go')">
-                        確認前往
-                    </n-button>
-                </n-space>
-            </template>
-        </n-card>
-    </n-modal>
 
-    <n-modal v-model:show="toGithubRepoPage">
-        <n-card style="width: 600px" :bordered="false" size="huge" role="dialog" aria-modal="true">
+  <n-modal v-model:show="toGithubUserPage">
+    <n-card style="width: 600px" :bordered="false" size="huge" role="dialog" aria-modal="true">
 
-            <span style="font-size: 20px; ">
-                <n-icon size="23" style="vertical-align: sub;">
-                    <LogOutOutline />
-                </n-icon>
-                {{ `即將前往 ${toWhosePage} / ${toWhichRepo} 的Github頁面` }}
-            </span>
-            <template #footer>
-                <n-space justify="end">
-                    <n-button type="error" @click="toRepoPage('cancle')">
-                        取消前往
-                    </n-button>
-                    <n-button type="warning" @click="toRepoPage('newPage')">
-                        開新分頁
-                    </n-button>
-                    <n-button type="success" @click="toRepoPage('go')">
-                        確認前往
-                    </n-button>
-                </n-space>
-            </template>
-        </n-card>
-    </n-modal>
+      <span style="font-size: 20px; ">
+        <n-icon size="23" style="vertical-align: sub;">
+          <LogOutOutline />
+        </n-icon>
+        {{ `即將前往 ${toWhosePage} 的Github頁面` }}
+      </span>
+      <template #footer>
+        <n-space justify="end">
+          <n-button type="error" @click="toUserPage('cancle')">
+            取消前往
+          </n-button>
+          <n-button type="warning" @click="toUserPage('newPage')">
+            開新分頁
+          </n-button>
+          <n-button type="success" @click="toUserPage('go')">
+            確認前往
+          </n-button>
+        </n-space>
+      </template>
+    </n-card>
+  </n-modal>
+
+  <n-modal v-model:show="toGithubRepoPage">
+    <n-card style="width: 600px" :bordered="false" size="huge" role="dialog" aria-modal="true">
+
+      <span style="font-size: 20px; ">
+        <n-icon size="23" style="vertical-align: sub;">
+          <LogOutOutline />
+        </n-icon>
+        {{ `即將前往 ${toWhosePage} / ${toWhichRepo} 的Github頁面` }}
+      </span>
+      <template #footer>
+        <n-space justify="end">
+          <n-button type="error" @click="toRepoPage('cancle')">
+            取消前往
+          </n-button>
+          <n-button type="warning" @click="toRepoPage('newPage')">
+            開新分頁
+          </n-button>
+          <n-button type="success" @click="toRepoPage('go')">
+            確認前往
+          </n-button>
+        </n-space>
+      </template>
+    </n-card>
+  </n-modal>
 </template>
     
 <script setup lang='ts'>
@@ -171,6 +130,22 @@ const toWhosePage = ref("");
 const toWhichRepo = ref("");
 const usedLanguages = ref({});
 const contributors = ref([]);
+
+const languageColorMap = ref(new Map([
+  ["Java", { color: "#493541", textColor: "#d48cb9", borderColor: "#1e496f" }],
+  ["Rust", { color: "#ff8c7a24", textColor: "#db8f83", borderColor: "#1e496f" }],
+  ["Python", { color: "#3973a4", textColor: "#d4c78c", borderColor: "#1e496f" }],
+  ["C#", { color: "#6d287e", textColor: "#d04cf0", borderColor: "#1e496f" }],
+  ["PHP", { color: "#7377ad", textColor: "#272739", borderColor: "#1e496f" }],
+  ["Vue", { color: "#63e2b725", textColor: "#63e2b7", borderColor: "#1e496f" }],
+  ["HTML", { color: "#5b3232", textColor: "#ec5d5d", borderColor: "#1e496f" }],
+  ["CSS", { color: "#313755", textColor: "#607dff", borderColor: "#1e496f" }],
+  ["JavaScript", { color: "#5b4a32", textColor: "#d4c78c", borderColor: "#1e496f" }],
+  ["TypeScript", { color: "#70c0e825", textColor: "#70c0e8", borderColor: "#70c0e8" }],
+
+
+
+]));
 
 // computed--------------------------------------------------------
 const lastUpdateDate = computed(() => {
@@ -281,53 +256,53 @@ onMounted(async () => {
 <style>
 .userName,
 .repoName {
-    text-decoration: none;
-    transition: all 0.2s;
+  text-decoration: none;
+  transition: all 0.2s;
 }
 
 .userName:hover,
 .repoName:hover {
-    color: rgb(121, 121, 166);
-    transition: all 0.2s;
-    cursor: pointer;
+  color: rgb(121, 121, 166);
+  transition: all 0.2s;
+  cursor: pointer;
 
 }
 
 
 .n-avatar {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .repoNameWrap {
-    font-size: 20px;
-    font-weight: bold;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .githubRepoWrap {
-    border: 2px solid rgb(95, 95, 95);
-    padding: 15px;
-    margin: 10px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    background-color: #262a32;
-    /* box-shadow: 0 0 10px #16082c; */
-    transition: all 0.2s;
+  border: 2px solid rgb(95, 95, 95);
+  padding: 15px;
+  margin: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #262a32;
+  /* box-shadow: 0 0 10px #16082c; */
+  transition: all 0.2s;
 
 }
 
 .githubRepoWrap:hover {
-    background-color: #2c303a;
-    transition: all 0.2s;
+  background-color: #2c303a;
+  transition: all 0.2s;
 }
 
 .description {
-    font-size: 16px;
-    line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.5;
 
 
-    margin-top: 5px;
-    padding: 20px;
-    background: #22262a;
-    /* border: 1px solid rgb(180, 180, 180); */
+  margin-top: 5px;
+  padding: 20px;
+  background: #22262a;
+  /* border: 1px solid rgb(180, 180, 180); */
 }
 </style>

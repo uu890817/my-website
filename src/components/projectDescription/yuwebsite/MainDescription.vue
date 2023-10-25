@@ -11,7 +11,7 @@ const descData = [
       "https://i.imgur.com/GBI65mm.webp",
     ],
     title: "首頁",
-    text: "首頁提供了一些從Github API取得的一些資料，並把它處理成容易觀看的樣式，讓使用者可以簡單地吸收這些資訊",
+    text: "首頁使用AJAX技術從Github API取得資料，並把它處理成容易觀看的樣式，讓使用者可以簡單地吸收這些資訊",
   },
   // {
   //   img: [
@@ -33,7 +33,7 @@ const descData = [
       "https://i.imgur.com/fJgSrbi.webp",
       "https://i.imgur.com/qLyPX3H.webp",
     ],
-    title: "針對不同裝置的畫面",
+    title: "響應式網頁設計(RWD)",
     text: "為了讓不同大小的裝置都能順利瀏覽，針對小螢幕有進行優化，讓使用者也能透過小螢幕瀏覽本網站"
   },
   {
@@ -49,7 +49,7 @@ const descData = [
       "https://i.imgur.com/O5E8D51.webp",
     ],
     title: "可重複利用的組件",
-    text: "使用了Vue提供的優點，讓使用者可以更快速的開發，並且重複利用組件，讓開發效率大幅提高"
+    text: "使用了Vue框架的優點，讓開發人員可以更快速的開發，並且重複利用組件，讓開發效率大幅提高"
   },
   {
     img: [

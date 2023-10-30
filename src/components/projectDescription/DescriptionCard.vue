@@ -182,7 +182,7 @@ const props = defineProps<{
 
 .projectName {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 10px;
 }
 

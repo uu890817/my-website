@@ -13,7 +13,7 @@
             fullName.repoName }}</span>
       </p>
 
-      <p>最後更新 : {{ lastUpdateDate }}(UTC+8)</p>
+      <p>最後更新 : {{ lastUpdateDate }}</p>
       <!-- {{ props.repoData?.created_at }}
             {{ props.repoData?.updated_at }} -->
     </n-space>
@@ -149,8 +149,8 @@ const languageColorMap = ref(new Map([
 
 // computed--------------------------------------------------------
 const lastUpdateDate = computed(() => {
-  const dateTime = new Date(new Date(props.repoData?.updated_at).getTime() - (8 * 60 * 60 * 1000));
-
+  const dateTime = new Date(new Date(props.repoData?.pushed_at).getTime());
+  //  - (8 * 60 * 60 * 1000)
   const year = dateTime.getFullYear();
   const month = (dateTime.getMonth() + 1).toString().padStart(2, "0");
   const day = dateTime.getDate().toString().padStart(2, "0");
@@ -245,7 +245,14 @@ onMounted(async () => {
     contributors.value = JSON.parse(getContributorsData);
   } else {
     const contributorsResult = await getContributors(props.repoData?.full_name);
-    localStorage.setItem(`${props.repoData?.full_name}:contributors`, JSON.stringify(contributorsResult));
+    const resultArray = [];
+    for (let i of contributorsResult) {
+      resultArray.push({
+        login: i.login,
+        avatar_url: i.avatar_url,
+      });
+    }
+    localStorage.setItem(`${props.repoData?.full_name}:contributors`, JSON.stringify(resultArray));
     localStorage.setItem(`${props.repoData?.full_name}:contributorsEfficientTime`, new Date().getTime().toString());
     contributors.value = contributorsResult;
   }

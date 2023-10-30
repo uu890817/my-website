@@ -83,6 +83,14 @@ const sortOptions = ref([
   },
 ]);
 
+type RepoData = {
+  full_name: string,
+  description: string,
+  created_at: string,
+  updated_at: string,
+  pushed_at: string,
+}
+
 // computed--------------------------------------------------------
 const pages = computed(() => {
   return Math.round(repos.value.length / 4);
@@ -143,8 +151,21 @@ onMounted(async () => {
     repos.value = JSON.parse(getData);
     return;
   }
-  let result = await getRepos();
-  localStorage.setItem("allRepos", JSON.stringify(result));
+  const result = await getRepos();
+  const resultArray = [];
+  for (let i of result) {
+    resultArray.push({
+      id: i.id,
+      full_name: i.full_name,
+      description: i.description,
+      created_at: i.created_at,
+      updated_at: i.updated_at,
+      pushed_at: i.pushed_at,
+    } as RepoData);
+  }
+
+  localStorage.setItem("allRepos", JSON.stringify(resultArray));
+  console.info(resultArray);
   localStorage.setItem("allReposEfficientTime", new Date().getTime().toString());
   // let result = await getRepos();
   if (result === "Request failed with status code 403") {
@@ -152,8 +173,6 @@ onMounted(async () => {
     return;
   }
 
-  localStorage.setItem("allRepos", JSON.stringify(result));
-  localStorage.setItem("allReposEfficientTime", new Date().getTime().toString());
 
   repos.value = result.sort((a: { created_at: string }, b: { created_at: string }) => {
     let aData = new Date(a.created_at).getTime();

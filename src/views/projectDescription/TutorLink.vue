@@ -222,7 +222,7 @@ const useTechnology = [
   },
   {
     name: "Naive UI",
-    icon: "https://www.naiveui.com/assets/naivelogo-93278402.svg",
+    icon: "https://www.naiveui.com/assets/naivelogo-XQ1U1Js8.svg",
     link: "https://www.naiveui.com/zh-CN/os-theme",
   },
 

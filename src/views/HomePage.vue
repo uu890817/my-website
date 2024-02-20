@@ -131,9 +131,9 @@ const sortCreated = () => {
   });
 };
 const sortUpdate = () => {
-  return (repos.value).sort((a: { updated_at: string }, b: { updated_at: string }) => {
-    let aData = new Date(a.updated_at).getTime();
-    let bData = new Date(b.updated_at).getTime();
+  return (repos.value).sort((a: { pushed_at: string }, b: { pushed_at: string }) => {
+    let aData = new Date(a.pushed_at).getTime();
+    let bData = new Date(b.pushed_at).getTime();
     if (sortOrder.value === "asc") {
       return aData - bData;
     }
